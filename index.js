@@ -1,13 +1,13 @@
 console.log('hello jee tomar')
 
-const API_KEY="225e6a742f20dbc82ecfbb710c306fbe";
+const API_key="225e6a742f20dbc82ecfbb710c306fbe";
 
 async function showWeather(){
-    let city="goa";
+    let city_name = "goa";
 
-    const response=await fetch('https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_KEY}');
+    const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}');
 
-    const data= await response.json();
+    const data = await response.json();
 
-    console.log("weather data:->"+data);
+    console.log(" weather data:-> " + data);
 }
