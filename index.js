@@ -9,10 +9,12 @@ async function showWeather(){
 
     const data = await response.json();
 
-    console.log(" weather data:-> " + data);
+    console.log(" weather data:-> ",data);
 
     let newPara=document.createElement('p');
-    newPara.textContent
+    newPara.textContent='${data?.main?.temp.toFixed(2)} C' 
+
+    document.body.appendChild(newPara);
 
 
 }
