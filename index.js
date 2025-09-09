@@ -9,3 +9,5 @@ const userInfoContainer=document.querySelector(".user-info-container");
 
 //initail variables_________________________________________________
 let currentTab=userTab;// we have to make a current tab which is the user tab
+const API_KEY="225e6a742f20dbc82ecfbb710c306fbe";
+currentTab.classList.add("ccurrent-tab")
