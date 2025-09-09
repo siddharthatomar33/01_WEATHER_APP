@@ -109,3 +109,20 @@ function renderWeatherInfo(weatherInfo){
     cloudiness.innerText=weatherInfo?.cloud?.all;
 
 }
+
+function getLocation(){
+    if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(showPosition);
+    }
+    else{
+        //alert-show an alert for no geolocation support available
+
+    }
+}
+
+
+function showPosition(Position){
+    constuserCoordinates
+}
+const grantAccessButton=document.querySelector("data-grantAccess");
+grantAccessButton.addEventListener("click", getLocation);
