@@ -8,16 +8,31 @@ const userInfoContainer=document.querySelector(".user-info-container");
 
 
 //initail variables_________________________________________________
-let currentTab=userTab;// we have to make a current tab which is the user tab
+let oldTabTab=userTab;// we have to make a current tab which is the user tab
 const API_KEY="225e6a742f20dbc82ecfbb710c306fbe";
-currentTab.classList.add("ccurrent-tab");
+
+oldTab.classList.add("current-tab");
 
 //function for switching one tab to other
-function switchTab(clickedTab){
-    if(clickedTab!=clickedTab){
-        currentTab.classList.remove("currnt-tab");
-        currentTab=clickedTab;
-        currentTab.classList.add("current-tab");
+function switchTab(newTab){
+    if(newTab!=oldTab){
+        oldTab.classList.remove("current-tab");
+        oldTab=newTab;    //pasting properties to current of clicked tab
+        oldTab.classList.add("current-tab");
+
+        if(!searchForm.classList.contains("active")){
+            //kya search form wala form visible hai? then make it visible
+            userInfoContainer.classList.remove("active");
+            grantAccessContainerclasslist.remove("active");
+            searchForm.classList.add("active");
+        }
+        else{
+            //pehele search wale tab pr thA, aab user weather prr hu
+            searchForm.classList.remove("active");
+            userInfoContainer.classList.remove("active");
+            //
+            getfromSessionStorage();
+        }
     }
 }
 
