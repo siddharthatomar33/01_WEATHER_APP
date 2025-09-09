@@ -98,6 +98,6 @@ function renderWeatherInfo(weatherInfo){
     const cloudiness=document.querySelector("[data-cloudiness]");
 
     //fetch values from weatherInfo object and put it in UI elements
-    
 
+    cityName.innerText=weatherInfo?.name;
 }
