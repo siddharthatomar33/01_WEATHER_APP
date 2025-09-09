@@ -50,5 +50,13 @@ searchTab.addEventListener("click", ()=>{
 
 //check for coordinates in session storage
 function getfromSessionStorage(){
-    cinst
+    const localCoordinates=sessionStorage.getItem("user-coordinates");
+    if(!localCoordinates){  //not localCoordinates
+        //agar coordinates nahi mile
+        grantAccessContainer.classList.add("active");
+    }
+    else{
+        const coordinates=JSON.parse(localCoordinates);//json parse krke object bana rhe
+        fetchUserWeatherInfo(coordinates);
+    }
 }
