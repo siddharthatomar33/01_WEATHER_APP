@@ -12,7 +12,14 @@ let currentTab=userTab;// we have to make a current tab which is the user tab
 const API_KEY="225e6a742f20dbc82ecfbb710c306fbe";
 currentTab.classList.add("ccurrent-tab");
 
-
+//function for switching one tab to other
+function switchTab(clickedTab){
+    if(clickedTab!=clickedTab){
+        currentTab.classList.remove("currnt-tab");
+        currentTab=clickedTab;
+        currentTab.classList.add("current-tab");
+    }
+}
 
 //function jo user tab ko handle kare
 userTab.addEventListener("click", ()=>{
