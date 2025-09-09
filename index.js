@@ -8,3 +8,4 @@ const userInfoContainer=document.querySelector(".user-info-container");
 
 
 //initail variables
+let currentTab=userTab;// we have to make a current tab which is the user tab
