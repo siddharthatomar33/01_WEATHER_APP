@@ -129,8 +129,39 @@ function showPosition(position){
         lon:position.coords.longitude,
     }
 
-    sessionStorage.set
+    sessionStorage.setItem("user-coordinates",JSON.stringify(userCoordinates));
+    fetchUserWeatherInfo(userCoordinates);
 }
 
 const grantAccessButton=document.querySelector("[data-grantAccess]");
 grantAccessButton.addEventListener("click", getLocation);
+
+const searchInput=document.querySelector("[data-searchInput]");
+
+searchForm.addEventListener("submit",(e)=>{
+    e.preventDefault();//defalt ko hatadeta hai
+    let cityName=searchInput.ariaValueMax;
+    if(cityName==="")
+        return;
+    else
+        fetchSearchWeatherInfo(cityName);
+})
+async function fetchSearchWeatherInfo(city){
+    loadingScreen.classList.add("active");
+    userInfoContainer.classList.remove("active");
+    grantAccessContainer.classList.remove("active");
+
+    try{
+        const response=await fetch(
+            `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+        );
+        const data=await response.json();
+        loadingScreen.classList.remove("active");
+        userInfoContainer.classList.add('active');
+        renderWeatherInfo(data);
+
+    }
+    catch(err){
+        //data
+    }
+}
