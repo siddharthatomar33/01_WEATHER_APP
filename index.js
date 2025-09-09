@@ -128,6 +128,8 @@ function showPosition(position){
         lat:position.coords.latitude,
         lon:position.coords.longitude,
     }
+
+    sessionStorage.set
 }
 
 const grantAccessButton=document.querySelector("[data-grantAccess]");
