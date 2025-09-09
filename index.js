@@ -86,6 +86,18 @@ catch(err){
 }
 
 function renderWeatherInfo(weatherInfo){
+
     //firstly we have to fetch the elements
+    const cityName=document.querySelector("[data-cityName]");
+    const countryIcon=document.querySelector("[data-countryIcon]");
+    const desc=document.querySelector("[data-weatherDesc]");
+    const weatherIcon=document.querySelector("[data-weatherIcon]");
+    const temp=document.querySelector("[data-temp]");
+    const windSpeed=document.querySelector("[data-windSpeed]");
+    const humidity=document.querySelector("[data-humidity]");
+    const cloudiness=document.querySelector("[data-cloudiness]");
+
+    //fetch values from weatherInfo object and put it in UI elements
     
+
 }
