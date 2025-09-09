@@ -111,18 +111,24 @@ function renderWeatherInfo(weatherInfo){
 }
 
 function getLocation(){
+    //if browser supports geolocation api
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(showPosition);
     }
-    else{
+    else{//if browser does not support geolocation api
+        alert("Geolocation is not supported by this browser.");
         //alert-show an alert for no geolocation support available
 
     }
 }
 
 
-function showPosition(Position){
-    constuserCoordinates
+function showPosition(position){
+    const userCoordinates={
+        lat:position.coords.latitude,
+        lon:position.coords.longitude,
+    }
 }
-const grantAccessButton=document.querySelector("data-grantAccess");
+
+const grantAccessButton=document.querySelector("[data-grantAccess]");
 grantAccessButton.addEventListener("click", getLocation);
