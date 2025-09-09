@@ -100,4 +100,6 @@ function renderWeatherInfo(weatherInfo){
     //fetch values from weatherInfo object and put it in UI elements
 
     cityName.innerText=weatherInfo?.name;
+    countryIcon.src=`https://flagcdn.com/144x108/${weatherInfo?.sys?.country.toLowerCase()}.png`; 
+    
 }
