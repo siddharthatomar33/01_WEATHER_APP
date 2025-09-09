@@ -7,5 +7,5 @@ const loadingScreen=document.querySelector(".loading-container");
 const userInfoContainer=document.querySelector(".user-info-container");
 
 
-//initail variables
+//initail variables_________________________________________________
 let currentTab=userTab;// we have to make a current tab which is the user tab
