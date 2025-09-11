@@ -10,6 +10,8 @@ const userInfoContainer=document.querySelector(".user-info-container");
 //initail variables_________________________________________________
 let currentTab=userTab;// we have to make a current tab which is the user tab
 const API_KEY="225e6a742f20dbc82ecfbb710c306fbe";
+//
+getfromSessionStorage();
 
 currentTab.classList.add("current-tab");
 
@@ -32,7 +34,7 @@ function switchTab(clickedTab){
             //pehele search wale tab pr thA, aab user weather prr hu
             searchForm.classList.remove("active");
             userInfoContainer.classList.remove("active");
-            //in user weather tab,weather display krna hai, check local storage 
+            //in user weathertab,weather display krna hai, check local storage 
             getfromSessionStorage();
         }
     }
@@ -52,7 +54,7 @@ searchTab.addEventListener("click", ()=>{
 function getfromSessionStorage(){
     const localCoordinates=sessionStorage.getItem("user-coordinates");
     if(!localCoordinates){  //not localCoordinates
-        //agar coordinates nahi mile
+        //agar coordinates nahi mile,grant access container visible krdo
         grantAccessContainer.classList.add("active");
     }
     else{
@@ -113,6 +115,7 @@ function renderWeatherInfo(weatherInfo){
 function getLocation(){
     //if browser supports geolocation api
     if(navigator.geolocation){
+        //current position or coordinates dega
         navigator.geolocation.getCurrentPosition(showPosition);
     }
     else{//if browser does not support geolocation api
@@ -121,7 +124,6 @@ function getLocation(){
 
     }
 }
-
 
 function showPosition(position){
     const userCoordinates={
@@ -133,14 +135,15 @@ function showPosition(position){
     fetchUserWeatherInfo(userCoordinates);
 }
 
+//event listener on GRANT ACCESS BUTTON
 const grantAccessButton=document.querySelector("[data-grantAccess]");
-grantAccessButton.addEventListener("click", getLocation);
+grantAccessButton.addEventListener("click", getLocation);//current position dega
 
 const searchInput=document.querySelector("[data-searchInput]");
 
 searchForm.addEventListener("submit",(e)=>{
     e.preventDefault();//defalt ko hatadeta hai
-    let cityName=searchInput.ariaValueMax;
+    let cityName=searchInput.Value;
     if(cityName==="")
         return;
     else
