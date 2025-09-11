@@ -75,7 +75,7 @@ try{
     const response= await fetch(
     `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     );
-    const data=response.json();
+    const data=await response.json();
 
     loadingScreen.classList.remove("active"); 
     userInfoContainer.classList.add("active");
@@ -143,7 +143,7 @@ const searchInput=document.querySelector("[data-searchInput]");
 
 searchForm.addEventListener("submit",(e)=>{
     e.preventDefault();//defalt ko hatadeta hai
-    let cityName=searchInput.Value;
+    let cityName=searchInput.value;
     if(cityName==="")
         return;
     else
