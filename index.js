@@ -27,7 +27,7 @@ function switchTab(clickedTab){
         if(!searchForm.classList.contains("active")){
             //kya search form wala form visible hai? then make it visible
             userInfoContainer.classList.remove("active");
-            grantAccessContainerclasslist.remove("active");
+            grantAccessContainer.classList.remove("active");
             searchForm.classList.add("active");
         }
         else{
@@ -108,7 +108,7 @@ function renderWeatherInfo(weatherInfo){
     temp.innerText=weatherInfo?.main?.temp;
     windSpeed.innerText=weatherInfo?.wind?.speed;
     humidity.innerText=weatherInfo?.main?.humidity;
-    cloudiness.innerText=weatherInfo?.cloud?.all?? "N/A";
+    cloudiness.innerText=weatherInfo?.clouds?.all?? "N/A";
 
 }
 
@@ -167,6 +167,6 @@ async function fetchSearchWeatherInfo(city){
     catch(err){
         //data
         alert("Failed to fetch weather data!");
-        console.log("err"); 
+        console.error("err"); 
     }
 }
