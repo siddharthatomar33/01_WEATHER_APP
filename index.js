@@ -108,7 +108,7 @@ function renderWeatherInfo(weatherInfo){
     temp.innerText=weatherInfo?.main?.temp;
     windSpeed.innerText=weatherInfo?.wind?.speed;
     humidity.innerText=weatherInfo?.main?.humidity;
-    cloudiness.innerText=weatherInfo?.cloud?.all;
+    cloudiness.innerText=weatherInfo?.cloud?.all?? "N/A";
 
 }
 
@@ -166,5 +166,7 @@ async function fetchSearchWeatherInfo(city){
     }
     catch(err){
         //data
+        alert("Failed to fetch weather data!");
+        console.log("err"); 
     }
 }
