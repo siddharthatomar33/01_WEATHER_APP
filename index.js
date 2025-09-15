@@ -169,4 +169,5 @@ async function fetchSearchWeatherInfo(city){
         alert("Failed to fetch weather data!");
         console.error("err"); 
     }
+
 }
