@@ -27,6 +27,8 @@ h1{
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
+    margin-top: 4rem;
+    margin: 0 auto;
 
 }
 
@@ -38,8 +40,31 @@ h1{
 
 }
 
-.tab-container-tab{
-    background-color: aliceblue;
+.tab.current-tab{
+    background-color: rgba(102, 152, 196, 0.313);
     border-radius: 4px;
+
+}
+
+.weather-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-block: 4rem;
+}
+
+.btn{
+    all: unset;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    background-color: rgb(95, 95, 243);
+    cursor: pointer;
+    padding:10px 30px;
+}
+
+.grant-location-container{
     
 }
