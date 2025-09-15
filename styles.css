@@ -41,7 +41,7 @@ h1{
 }
 
 .tab.current-tab{
-    background-color: rgba(102, 152, 196, 0.313);
+    background-color: rgba(46, 30, 171, 0.313);
     border-radius: 4px;
 
 }
@@ -60,11 +60,37 @@ h1{
     text-transform: uppercase;
     color: rgb(255, 255, 255);
     border-radius: 5px;
-    background-color: rgb(95, 95, 243);
+    background-color: rgb(96, 96, 219);
     cursor: pointer;
     padding:10px 30px;
+    margin-bottom: 10px;
+}
+
+.sub-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
 }
 
 .grant-location-container{
-    
+    display: none;
+}
+
+.grant-location-container.active{
+    display: flex;
+}
+.grant-location-container img{
+    margin-bottom: 2rem;
+}
+
+.grant-location-container p:first-of-type{
+    font-size:1.75rem;
+    font-weight: 600;
+}
+.grant-location-container p:last-of-type{
+    font-size:0.75rem;
+    font-weight: 500;
+    margin-top: 0.75rem;
+    letter-spacing: 0.75px;
 }
