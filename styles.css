@@ -1,4 +1,15 @@
 *,
 *::before,*::after{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'merriweather sans',sans-serif;
+}
+
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    color:rgb(214, 240, 247);
+    background-image:linear-gradient(90deg,rgba(139, 139, 224, 1) 0%, rgba(108, 108, 173, 1) 35%, rgba(131, 185, 201, 1) 100%);
     
 }
