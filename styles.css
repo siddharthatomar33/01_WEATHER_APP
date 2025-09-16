@@ -144,5 +144,9 @@ h1{
 
 
 .parameter-container{
-    
+    display: flex;
+    gap: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
 }
