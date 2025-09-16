@@ -23,13 +23,10 @@ h1{
 .tab-container{
     width: 90%;
     max-width: 550px;
-    margin-top: 4rem;
+    margin-top: 5rem;
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
-    margin-top: 4rem;
-    margin: 0 auto;
-
 }
 
 .tab{
